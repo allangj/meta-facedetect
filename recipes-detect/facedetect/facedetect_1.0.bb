@@ -9,21 +9,19 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/git/README.md;md5=f5c98e294db0d5c0c0dad293
 
 DEPENDS = "opencv"
 
-inherit pkgconfig
+inherit pkgconfig cmake
 
 BRANCH = "master"
 
-SRCREV = "b034fb58d8ea71c2820626244c396cedf641e279"
+SRCREV = "6404d54e335243d4a6c72424cd7d576b2f6e9bb8"
 SRC_URI = "git://github.com/allangj/facedetect.git;branch=${BRANCH}"
 
-S = "${WORKDIR}/git/"
-D = ""
+S = "${WORKDIR}/git"
 
-EXTRA_OEMAKE = " -C ${S}"
-
-do_compile() {
-}
+OBJECT = "facedetect"
 
 do_install () {
-   oe_runmake install INSTALL_PREFIX=${D} -C ${S}
+   install -d ${D}${bindir}
+   install -m 0755 ${OBJECT} ${D}${bindir}
 }
+
