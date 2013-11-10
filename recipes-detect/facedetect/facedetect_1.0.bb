@@ -13,7 +13,7 @@ inherit pkgconfig cmake
 
 BRANCH = "master"
 
-SRCREV = "6404d54e335243d4a6c72424cd7d576b2f6e9bb8"
+SRCREV = "1d15c2cb6c5dbbb657016bf828d4c89a98b1bc5e"
 SRC_URI = "git://github.com/allangj/facedetect.git;branch=${BRANCH}"
 
 S = "${WORKDIR}/git"
